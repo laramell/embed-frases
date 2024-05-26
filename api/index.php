@@ -1,3 +1,13 @@
 <?php
-var_dump($_ENV['SUPABASE_URL']);
-var_dump($_ENV['SUPABASE_API_KEY']);
+include_once 'connection.php';
+
+
+
+$quote = getRandomQuote();
+
+if ($quote) {
+    echo "Frase: " . htmlspecialchars($quote[0]['citacao_frase']) . "<br>";
+    echo "Autor: " . htmlspecialchars($quote[0]['autor_frase']);
+} else {
+    echo "Nenhuma frase encontrada.";
+}
