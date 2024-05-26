@@ -1,8 +1,11 @@
 <?php
 include_once 'connection.php';
 
-
 $quote = getRandomQuote();
+
+if ($_GET['black']){
+
+}
 
 ?>
 
@@ -21,19 +24,22 @@ $quote = getRandomQuote();
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                padding: 30px 20px;
+                padding: 10px 5px;
                 box-sizing: border-box;
             }
             h4,h5 {
                 font-family: 'Space Mono';
                 font-weight: 500;
-                font-size: 18px;
+                font-size: 16px;
                 margin: 0;
                 width: 100%;
+                <?php if ($_GET['black']){
+                    echo 'color: #FFF;';
+                }?>
             }
             h5 {
                 font-weight: 700;
-                font-size: 15px;
+                font-size: 13px;
                 text-align: left;
                 margin-top: 8px;
             }
