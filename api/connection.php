@@ -1,13 +1,15 @@
 <?php
+
+
 // Definindo constantes para a URL do Supabase e a API Key
-define('SUPABASE_URL', $_ENV['SUPABASE_URL']);
-define('SUPABASE_API_KEY', $_ENV['SUPABASE_API_KEY']);
+define('SUPA_URL', $_ENV['SUPABASE_URL']);
+define('SUPA_API_KEY', $_ENV['SUPABASE_API_KEY']);
 
 // Função para realizar requisições cURL
 function executeCurl($url, $method = 'GET', $data = null) {
     $headers = [
-        "apikey: " . SUPABASE_API_KEY,
-        "Authorization: Bearer " . SUPABASE_API_KEY,
+        "apikey: " . SUPA_API_KEY,
+        "Authorization: Bearer " . SUPA_API_KEY,
         "Content-Type: application/json"
     ];
 
@@ -42,7 +44,7 @@ function executeCurl($url, $method = 'GET', $data = null) {
 
 // Função para obter o número total de frases
 function getTotalQuotes() {
-    $url = SUPABASE_URL . "/rest/v1/frases?select=count";
+    $url = SUPA_URL . "/rest/v1/frases?select=count";
     return executeCurl($url);
 }
 
@@ -51,7 +53,7 @@ function getRandomQuote() {
     $totalQuotes = getTotalQuotes();
     if ($totalQuotes && isset($totalQuotes[0]['count'])) {
         $randomOffset = rand(0, $totalQuotes[0]['count'] - 1);
-        $url = SUPABASE_URL . "/rest/v1/frases?select=*&limit=1&offset=$randomOffset";
+        $url = SUPA_URL . "/rest/v1/frases?select=*&limit=1&offset=$randomOffset";
         return executeCurl($url);
     }
     return false;
@@ -59,7 +61,7 @@ function getRandomQuote() {
 
 // Função para inserir uma nova frase
 function insertQuote($citacao_frase, $autor_frase) {
-    $url = SUPABASE_URL . "/rest/v1/frases";
+    $url = SUPA_URL . "/rest/v1/frases";
     $data = [
         'citacao_frase' => $citacao_frase,
         'autor_frase' => $autor_frase
