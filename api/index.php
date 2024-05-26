@@ -3,9 +3,6 @@ include_once 'connection.php';
 
 $quote = getRandomQuote();
 
-if ($_GET['black']){
-
-}
 
 ?>
 
@@ -50,5 +47,22 @@ if ($_GET['black']){
             <h4>"<?= $quote[0]['citacao_frase'] ?>"</h4>
             <h5>— <?= $quote[0]['autor_frase'] ?></h5>
         </div>
+
+        <script>
+            function isDarkTheme() {
+                return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            }
+
+            if (isDarkTheme()) {
+                // Aplicar estilo para tema escuro
+                document.getElementsByTagName('h4')[0].style.color = '#FFF';
+                document.getElementsByTagName('h5')[0].style.color = '#FFF';
+            } else {
+                // Aplicar estilo para tema claro
+                document.getElementsByTagName('h4')[0].style.color = '#191919';
+                document.getElementsByTagName('h5')[0].style.color = '#191919';
+            }
+
+        </script>
     </body>
 </html>
