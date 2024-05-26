@@ -5,6 +5,8 @@
     }
   },
   "routes": [
-    { "src": "/(.*)", "dest": "/api/index.php" }
+    {"src": "/", "dest": "/api/index.php"},
+    {"src": "/novafrase", "dest": "/api/newfrase.html"},
+    {"src": "/novafrase-back", "dest": "/api/newinsert.php"}
   ]
 }
