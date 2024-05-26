@@ -9,6 +9,7 @@
   },
   "routes": [
     {"src": "/", "dest": "/api/index.php"},
+    {"src": "/?black=true", "dest": "/api/index.php?black=true"},
     {"src": "/novafrase", "dest": "/api/newfrase.html"},
     {"src": "/novafrase-back", "dest": "/api/newinsert.php"}
   ]
