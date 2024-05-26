@@ -2,12 +2,47 @@
 include_once 'connection.php';
 
 
-
 $quote = getRandomQuote();
 
-if ($quote) {
-    echo "Frase: " . htmlspecialchars($quote[0]['citacao_frase']) . "<br>";
-    echo "Autor: " . htmlspecialchars($quote[0]['autor_frase']);
-} else {
-    echo "Nenhuma frase encontrada.";
-}
+?>
+
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>LM - Frases</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+            #content {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 30px 20px;
+                box-sizing: border-box;
+            }
+            h4,h5 {
+                font-family: 'Space Mono';
+                font-weight: 500;
+                font-size: 18px;
+                margin: 0;
+                width: 100%;
+            }
+            h5 {
+                font-weight: 700;
+                font-size: 15px;
+                text-align: left;
+                margin-top: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <h4>"<?= $quote[0]['citacao_frase'] ?>"</h4>
+            <h5>— <?= $quote[0]['autor_frase'] ?></h5>
+        </div>
+    </body>
+</html>
