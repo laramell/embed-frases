@@ -24,7 +24,7 @@ $quote = getRandomQuote();
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                padding: 10px 5px;
+                padding: 0 5px;
                 box-sizing: border-box;
             }
             h4,h5 {
