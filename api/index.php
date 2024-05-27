@@ -20,6 +20,9 @@ $quote = getRandomQuote();
             * {
                 overflow: hidden;
             }
+            body{
+                background: transparent;
+            }
             #content {
                 display: flex;
                 justify-content: center;
