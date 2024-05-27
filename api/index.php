@@ -22,6 +22,7 @@ $quote = getRandomQuote();
             }
             body{
                 background: transparent;
+                margin: 0;
             }
             #content {
                 display: flex;
