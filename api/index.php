@@ -27,13 +27,15 @@ $quote = getRandomQuote();
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                padding: 0 5px;
+                padding: 5px;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 12px;
                 box-sizing: border-box;
             }
             h4,h5 {
                 font-family: 'Space Mono';
                 font-weight: 500;
-                font-size: 16px;
+                font-size: 13px;
                 margin: 0;
                 width: 100%;
                 <?php if ($_GET['black']){
@@ -42,7 +44,7 @@ $quote = getRandomQuote();
             }
             h5 {
                 font-weight: 700;
-                font-size: 13px;
+                font-size: 10px;
                 text-align: left;
                 margin-top: 8px;
             }
