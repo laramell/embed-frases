@@ -70,7 +70,7 @@ $quote = getRandomQuote();
                 // Aplicar estilo para tema claro
                 document.getElementsByTagName('h4')[0].style.color = '#191919';
                 document.getElementsByTagName('h5')[0].style.color = '#191919';
-                document.getElementsById('content').style.color = '#f1f1ef';
+                document.getElementsById('content').style.background = '#f1f1ef';
             }
 
         </script>
